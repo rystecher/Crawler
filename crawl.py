@@ -1,4 +1,4 @@
-url = 'http://python.org/'
+url = 'http://ryanstecher.net/'
 def get_page(url):
     try:
         import urllib
@@ -51,11 +51,13 @@ def crawl_web(seed):
     tocrawl = [seed]
     crawled = []
     index = []
-    while tocrawl:
-        page = tocrawl.pop()
-        if page not in crawled:
-        	content = get_page(page)
-        	add_page_to_index(index,page,content)
-        	union(tocrawl, store_all_links(get_page(page)))
-        	crawled.append(page)
-    return index
+    if len(crawled) < 6:
+        while tocrawl:
+            print crawled
+            page = tocrawl.pop()
+            if page not in crawled:
+                    content = get_page(page)
+                    add_page_to_index(index,page,content)
+                    union(tocrawl, store_all_links(get_page(page)))
+                    crawled.append(page)
+        return index

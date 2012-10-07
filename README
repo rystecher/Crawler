@@ -1,11 +1,15 @@
-Crawls the web, made in Python.
+Crawls the web for links and info, made in Python.
 
-In the command line: "print crawl_web('input your url here')
+In the command line: "print crawl_web(url)"
 
-It will output a list titled 'index' which consists of keywords 
+The function will output a list titled 'index' which consists of keywords 
 and urls associated with the keywords.
 
-Current problem: Goes on forever, I plan to limit the amount of links the
-crawler visits to a certain amount, because it finds the links on a page and
-visits all of them. Apparently Google discovered that for every link you find,
+As of right now, I'm still working out some bugs, so when you run the function above, it will start with my website. In the future, you'll be able to search any website.
+
+Current Problem: 
+
+It goes on forever since it manages to find a link on every webpage it visits. I've limited the program to find 5 links and stop. 
+
+...Apparently Google discovered that for every link you find on a website (on average),
 two more links will be available when following that link!
